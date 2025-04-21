@@ -1,4 +1,5 @@
 from taipy import Gui
+import os
 def operate(state):
     v1 = float(state.value1)
     v2 = float(state.value2)
@@ -42,5 +43,6 @@ Choose operation
 Note: This website is made by Rishabh, a 10 year old child and I've setted a world record that is the youngest person to make a website
 >
 '''
+port = int(os.environ.get("PORT",8080))
 if __name__ == "__main__":
-    Gui(page).run(title="Simple Calculator by Rishabh Birthalia", port=1000, use_reloader=True)
+    Gui(page).run(title="Simple Calculator by Rishabh Birthalia", port=port, host=0.0.0.0., use_reloader=True)
