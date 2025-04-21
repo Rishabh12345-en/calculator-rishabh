@@ -45,4 +45,4 @@ Note: This website is made by Rishabh, a 10 year old child and I've setted a wor
 '''
 port = int(os.environ.get("PORT",8080))
 if __name__ == "__main__":
-    Gui(page).run(title="Simple Calculator by Rishabh Birthalia", port=port, host="0.0.0.0.", use_reloader=True)
+    Gui(page).run(title="Simple Calculator by Rishabh Birthalia", port=port, host="0.0.0.0", use_reloader=True)
