@@ -16,9 +16,9 @@ def operate(state):
     elif op=="Power(^)":
         result = v1**v2
     elif op=="Remainder/Modules(%)":
-        result = v1**v2
+        result = v1%v2
     elif op=="Hypotenuse":
-        result = ((v1**v1)+(v2+v2))**1/2
+        result = (v1**2 + v2**2)**0.5
     state.result = f"The answer is: {result}"
 def clear(state):
     state.value1 = 1
@@ -47,7 +47,7 @@ Choose operation
 <|Reset|button|on_action=clear|>
 <|{result}|>
 
-Note: This website is made by Rishabh, a 10 year old child and I've setted a world record that is the youngest person to make a website
+Note: This website is made by Rishabh, a 10 year old child and I've set a world record that is the youngest person to make a website
 >
 '''
 port = int(os.environ.get("PORT",8080))
