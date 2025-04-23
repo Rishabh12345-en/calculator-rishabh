@@ -13,6 +13,12 @@ def operate(state):
         result = v1 + v2
     elif op == "Divide(/)":
         result = v1 / v2 if v2 != 0 else "Error (Divide by zero)"
+    elif op=="Power(^)":
+        result = v1**v2
+    elif op=="Remainder/Modules(%)":
+        result = v1**v2
+    elif op=="Hypotenuse":
+        result = ((v1**v1)+(v2+v2))**1/2
     state.result = f"The answer is: {result}"
 def clear(state):
     state.value1 = 1
@@ -24,6 +30,7 @@ value2 = 1
 value = "Subtract(-)"
 result = ""
 page = '''
+<|navbar|lov={[("/page1", "Calculator")]}|>
 <|text-center|
 # Welcome to our simple calculator
 
@@ -34,7 +41,7 @@ Enter your second number
 <|{value2}|number|>
 
 Choose operation  
-<|{value}|selector|lov=Subtract(-);Multiply(x);Add(+);Divide(/)|>
+<|{value}|selector|lov=Subtract(-);Multiply(x);Add(+);Divide(/);Power(^);Remainder/Modules(%);Hypotenuse|>
 
 <|Calculate|button|on_action=operate|>
 <|Reset|button|on_action=clear|>
